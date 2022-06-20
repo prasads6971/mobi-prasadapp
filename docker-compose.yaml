@@ -1,0 +1,13 @@
+version: '3.8'
+networks: # to create a custom bridge
+  prasadbr111: 
+services:
+  ashuapp007:
+    image: prasadciapp:v1 
+    build: . 
+    container_name: prasadcic1
+    ports:
+    - "1978:80"
+    restart: always 
+    networks: # use bridge created above 
+    - prasadbr111 
